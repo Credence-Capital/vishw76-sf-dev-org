@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gold_United_States</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT( ISPICKVAL( Address__CountryCode__s , &quot;US&quot;) )  &amp;&amp;    ISPICKVAL(Membership_Type__c, &quot;Gold&quot;)</errorConditionFormula>
+    <errorDisplayField>Address__City__s</errorDisplayField>
+    <errorMessage>You cannot add gold membership for countries other than US</errorMessage>
+</ValidationRule>

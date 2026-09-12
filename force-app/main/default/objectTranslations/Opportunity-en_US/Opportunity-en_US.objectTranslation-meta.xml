@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Appointment (Opportunity)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Appointments (Opportunities)</value>
+    </caseValues>
+    <recordTypes>
+        <label><!-- Online Booking --></label>
+        <name>Online_Booking</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Walk-in Appointment --></label>
+        <name>Walk_in_Appointment</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Appointment cannot be booked for an Inactive Salon. --></errorMessage>
+        <name>Appointment_Inactive_Salon</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- End Date Time cannot be earlier than Start Date Time. --></errorMessage>
+        <name>End_Time_Earlier</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Stage cannot be Booked ,Inprogress or completed unless at least one Service has been added. --></errorMessage>
+        <name>Stage_Booked_or_greater</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Stage cannot be Completed unless End Date Time is entered. --></errorMessage>
+        <name>Stage_Complete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Stage cannot be In Progress unless Start Date Time is populated. --></errorMessage>
+        <name>Stage_InProgress</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- DeliveryStatus --></label>
+        <name>DeliveryStatus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mark_Stage_Complete --></label>
+        <name>Mark_Stage_Complete</name>
+    </webLinks>
+</CustomObjectTranslation>

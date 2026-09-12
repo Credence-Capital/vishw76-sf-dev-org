@@ -1,0 +1,47 @@
+name: Validate Pull Request
+
+on:
+    pull_request:
+        branches: [main]
+        types: [opened, synchronize, reopened]
+
+jobs:
+    validate-and-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout source code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Install Salesforce CLI
+              run: |
+                  npm install -g @salesforce/cli
+
+            - name: Populate auth file
+              run: |
+                  echo "${{ secrets.SFDX_AUTH_URL }}" > sfdx_auth.txt
+
+            - name: Authenticate to Target Org
+              run: |
+                  sf org login sfdx-url --sfdx-url-file sfdx_auth.txt --set-default --alias targetOrg
+
+            - name: Run Validation and Generate Coverage Report
+              run: |
+                  sf project deploy start --dry-run --test-level RunLocalTests --wait 30 --coverage-formatters json --results-dir artifacts
+
+            - name: Enforce 75% Code Coverage Threshold
+              run: |
+                  # Read the total coverage percentage from the generated summary file
+                  COVERAGE=$(jq '.total.lines.pct' artifacts/coverage/coverage-summary.json)
+
+                  echo "Current Total Code Coverage: $COVERAGE%"
+
+                  # Check if coverage is less than 75%
+                  if (( $(echo "$COVERAGE < 75.0" | bc -l) )); then
+                    echo "❌ Validation Failed: Total code coverage ($COVERAGE%) is below the required 75% threshold."
+                    exit 1
+                  else
+                    echo "✅ Validation Passed: Total code coverage ($COVERAGE%) meets the 75% requirement."
+                  fi
+

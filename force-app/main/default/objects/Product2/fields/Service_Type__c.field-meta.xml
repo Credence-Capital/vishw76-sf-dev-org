@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Type__c</fullName>
+    <label>Service Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hair Cut</fullName>
+                <default>false</default>
+                <label>Hair Cut</label>
+            </value>
+            <value>
+                <fullName>Hair Spa</fullName>
+                <default>false</default>
+                <label>Hair Spa</label>
+            </value>
+            <value>
+                <fullName>Hair Coloring</fullName>
+                <default>false</default>
+                <label>Hair Coloring</label>
+            </value>
+            <value>
+                <fullName>Body Spa</fullName>
+                <default>false</default>
+                <label>Body Spa</label>
+            </value>
+            <value>
+                <fullName>Head Spa</fullName>
+                <default>false</default>
+                <label>Head Spa</label>
+            </value>
+            <value>
+                <fullName>Cleanup</fullName>
+                <default>false</default>
+                <label>Cleanup</label>
+            </value>
+            <value>
+                <fullName>Facial</fullName>
+                <default>false</default>
+                <label>Facial</label>
+            </value>
+            <value>
+                <fullName>Makeup 1</fullName>
+                <default>false</default>
+                <label>Makeup 1</label>
+            </value>
+            <value>
+                <fullName>Makeup 2</fullName>
+                <default>false</default>
+                <label>Makeup 2</label>
+            </value>
+            <value>
+                <fullName>Nails 1</fullName>
+                <default>false</default>
+                <label>Nails 1</label>
+            </value>
+            <value>
+                <fullName>Nails 2</fullName>
+                <default>false</default>
+                <label>Nails 2</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Hair</controllingFieldValue>
+            <valueName>Hair Cut</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hair</controllingFieldValue>
+            <valueName>Hair Spa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hair</controllingFieldValue>
+            <valueName>Hair Coloring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spa</controllingFieldValue>
+            <valueName>Body Spa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spa</controllingFieldValue>
+            <valueName>Head Spa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Makeup</controllingFieldValue>
+            <valueName>Makeup 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Makeup</controllingFieldValue>
+            <valueName>Makeup 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facial</controllingFieldValue>
+            <valueName>Cleanup</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facial</controllingFieldValue>
+            <valueName>Facial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nails</controllingFieldValue>
+            <valueName>Nails 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nails</controllingFieldValue>
+            <valueName>Nails 2</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
