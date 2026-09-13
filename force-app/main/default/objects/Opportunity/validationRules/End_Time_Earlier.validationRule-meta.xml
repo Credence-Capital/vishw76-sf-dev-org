@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>End_Time_Earlier</fullName>
-    <active>true</active>
-    <description>End Date Time cannot be earlier than Start Date Time.</description>
-    <errorConditionFormula>End_Date_Time__c &lt;  Start_Date_Time__c</errorConditionFormula>
-    <errorDisplayField>End_Date_Time__c</errorDisplayField>
-    <errorMessage>End Date Time cannot be earlier than Start Date Time.</errorMessage>
-</ValidationRule>

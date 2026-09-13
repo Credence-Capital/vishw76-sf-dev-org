@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help><!-- Represents Total Amount of the services without applying individual service discounts --></help>
-    <label><!-- Total Amount Without Product Disc --></label>
-    <name>Total_Amount_Without_Product_Disc__c</name>
-</CustomFieldTranslation>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Appointment_Inactive_Salon</fullName>
-    <active>true</active>
-    <description>Appointment cannot be booked for an Inactive Salon.</description>
-    <errorConditionFormula>ISPICKVAL( Account.Active__c , &quot;Inactive&quot;) = TRUE</errorConditionFormula>
-    <errorDisplayField>AccountId</errorDisplayField>
-    <errorMessage>Appointment cannot be booked for an Inactive Salon.</errorMessage>
-</ValidationRule>
