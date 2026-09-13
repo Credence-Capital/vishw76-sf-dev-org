@@ -49,13 +49,21 @@ jobs:
             --results-dir artifacts
 
       - name: Enforce 75% Code Coverage Threshold
+        shell: bash
         run: |
-          COVERAGE=$(jq '.total.lines.pct' artifacts/coverage/coverage-summary.json)
+          COVERAGE=$(jq -r '.summary.orgWideCoverage // .orgWideCoverage // empty' artifacts/coverage/*.json | head -n 1)
 
           echo "Current Total Code Coverage: $COVERAGE%"
 
+          if [ -z "$COVERAGE" ]; then
+            echo "❌ Could not find code coverage percentage."
+            echo "Coverage files generated:"
+            find artifacts/coverage -type f -print
+            exit 1
+          fi
+
           if (( $(echo "$COVERAGE < 75.0" | bc -l) )); then
-            echo "❌ Validation Failed: Total code coverage ($COVERAGE%) is below the required 75% threshold."
+            echo "❌ Validation Failed: Total code coverage ($COVERAGE%) is below 75%."
             exit 1
           else
             echo "✅ Validation Passed: Total code coverage ($COVERAGE%) meets the 75% requirement."
